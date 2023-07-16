@@ -8,7 +8,7 @@ const App: React.FC = () => (
 
     <div>
       <Button id='home' text='HOME' />
-      <Button id='PROJECTS' text='PROJECTS' />
+      <Button id='PROJECTS' text='LAST PROJECTS' />
       <Button id='CV' text='CV' />
     </div>
 
