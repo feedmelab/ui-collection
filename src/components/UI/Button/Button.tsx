@@ -1,24 +1,24 @@
-import React, { ButtonHTMLAttributes } from 'react';
-
+import { Link } from 'react-router-dom';
 import './index.css';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   text?: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  url?: string;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const Button = ({
-  type = 'button',
+  url = '#',
   text = '+ INFO',
   onClick,
 }: ButtonProps): React.ReactElement => {
-  const handleClick: React.MouseEventHandler<HTMLButtonElement> = (event) => {
+  const handleClick: React.MouseEventHandler<HTMLAnchorElement> = (event) => {
     console.log('Button clicked!', event.currentTarget);
   };
   return (
-    <button type={type} onClick={onClick || handleClick} className='fadeIn'>
+    <Link to={url} onClick={onClick || handleClick} className='fadeIn'>
       <span className='fadeInUp'>{text}</span>
-    </button>
+    </Link>
   );
 };
 

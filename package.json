@@ -30,9 +30,11 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
     "mini.css": "^3.0.1",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.1"
   }
 }
