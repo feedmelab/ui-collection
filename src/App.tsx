@@ -15,6 +15,7 @@ const App: React.FC = () => (
         <Button url='/' id='home' text='HOME' />
         <Button url='/projects' id='PROJECTS' text='LAST PROJECTS' />
         <Button url='/cv' id='CV' text='CV' />
+        <Button url='/play' id='play' text='PLAY' />
       </div>
 
       <main>

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './index.css'; // Import the CSS file
+import './index.css';
 
 type Line = { x: number; y: number; alpha: number };
 
@@ -22,15 +22,12 @@ const DrawingCanvas: React.FC = () => {
       contextRef.current = context;
     }
 
-    // Resize canvas
     const resizeCanvas = () => {
       if (canvasRef.current) {
         canvasRef.current.width = window.innerWidth;
         canvasRef.current.height = window.innerHeight;
       }
     };
-
-    // Call resizeCanvas initially and on each resize event
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
@@ -82,7 +79,7 @@ const DrawingCanvas: React.FC = () => {
 
     linesRef.current.forEach((line, i) => {
       context.strokeStyle = `rgba(123,44,125, ${line.alpha})`;
-      context.shadowColor = `rgba(0, 0, 0, ${line.alpha})`;
+      context.shadowColor = `rgba(223, 120, 30, ${line.alpha})`;
       context.lineWidth = 1;
       context.shadowBlur = 55;
       context.beginPath();
@@ -93,7 +90,6 @@ const DrawingCanvas: React.FC = () => {
       context.stroke();
       context.closePath();
 
-      // Decrease the alpha
       line.alpha -= 0.0833;
     });
 
