@@ -4,7 +4,9 @@ function ProjectsPage() {
   return (
     <>
       <h1>Projects</h1>
-      <pre>{JSON.stringify(MOCK_PROJECTS, null, '')}</pre>
+      {MOCK_PROJECTS.map((project) => {
+        return <pre>{JSON.stringify(project, null, '')}</pre>;
+      })}
     </>
   );
 }
