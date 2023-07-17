@@ -1,6 +1,6 @@
 .main {
-  border: 1px solid rgb(251, 251, 251);
   height: auto;
+  background: transparent;
   display: flex;
   margin: 0.3rem;
   margin-top: 1rem;

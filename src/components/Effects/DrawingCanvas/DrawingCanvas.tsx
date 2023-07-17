@@ -30,7 +30,6 @@ const DrawingCanvas: React.FC = () => {
     };
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
-
     return () => {
       window.removeEventListener('resize', resizeCanvas);
     };
@@ -44,7 +43,6 @@ const DrawingCanvas: React.FC = () => {
       document.removeEventListener('mousemove', draw);
       document.removeEventListener('mouseup', finishDrawing);
     }
-
     return () => {
       document.removeEventListener('mousemove', draw);
       document.removeEventListener('mouseup', finishDrawing);
@@ -65,7 +63,6 @@ const DrawingCanvas: React.FC = () => {
     if (!isDrawing) {
       return;
     }
-
     linesRef.current.push({ x: clientX, y: clientY, alpha: 1 });
   };
 
@@ -74,14 +71,13 @@ const DrawingCanvas: React.FC = () => {
     if (!context) {
       return;
     }
-
     context.clearRect(0, 0, context.canvas.width, context.canvas.height);
 
     linesRef.current.forEach((line, i) => {
-      context.strokeStyle = `rgba(123,44,125, ${line.alpha})`;
-      context.shadowColor = `rgba(223, 120, 30, ${line.alpha})`;
-      context.lineWidth = 1;
-      context.shadowBlur = 55;
+      context.strokeStyle = `rgba(55,99,125, ${line.alpha})`;
+      context.shadowColor = `rgba(23, 55, 55, ${line.alpha * 2})`;
+      context.lineWidth = 1 * line.alpha;
+      context.shadowBlur = 155;
       context.beginPath();
       if (i !== 0) {
         context.moveTo(linesRef.current[i - 1].x, linesRef.current[i - 1].y);
@@ -92,12 +88,9 @@ const DrawingCanvas: React.FC = () => {
 
       line.alpha -= 0.0833;
     });
-
     linesRef.current = linesRef.current.filter((line) => line.alpha > 0);
-
     requestAnimationFrame(animate);
   };
-
   useEffect(animate, []);
 
   return (
