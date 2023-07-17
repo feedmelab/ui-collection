@@ -57,6 +57,7 @@ a span {
   font-size: 0.6rem;
   opacity: 0;
   color: #191919;
+  pointer-events: none;
 }
 a:hover {
   background-color: rgb(213, 199, 199) !important;

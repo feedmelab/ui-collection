@@ -1,6 +1,13 @@
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Button from './components/UI/Button';
+const Button = React.lazy(
+  () =>
+    import('./components/UI/Button') as Promise<{
+      default: React.ComponentType<{ url: string; id: string; text: string }>;
+    }>
+);
+
 import ProjectsPage from './projects/ProjectsPage';
 import HomePage from './components/HomePage/HomePage';
 import DrawingCanvas from './components/Effects/DrawingCanvas/DrawingCanvas';
