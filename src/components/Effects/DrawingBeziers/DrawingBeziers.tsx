@@ -63,6 +63,10 @@
 // export default DrawingBeziers;
 import React, { useRef, useEffect, useState } from 'react';
 import p5 from 'p5';
+
+import * as p5Sound from 'p5/lib/addons/p5.sound';
+import * as p5Type from 'p5';
+
 import './index.css';
 const DrawingBeziers: React.FC = () => {
   const myRef = useRef<HTMLDivElement | null>(null);
@@ -103,13 +107,13 @@ const DrawingBeziers: React.FC = () => {
 
       p.setup = () => {
         p.createCanvas(p.windowWidth, 100);
-        p.background(248, 248, 248, 20);
+        // p.background(248, 248, 248, 0);
       };
 
       p.draw = () => {
-        p.background(248);
-        p.stroke(0, 123, 235, 20.9);
-        p.fill(0, 123, 255, 20.9);
+        p.background(248, 248, 248, 30);
+        p.stroke(0, 23, 215, 20.9);
+        p.fill(0, 123, 155, 20.9);
 
         p.beginShape();
 
