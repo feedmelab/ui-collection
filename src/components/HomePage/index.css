@@ -1,0 +1,12 @@
+.main {
+  border: 1px solid rgb(251, 251, 251);
+  height: 85vh;
+  display: flex;
+  margin: 0.3rem;
+  margin-top: 1rem;
+}
+.main span {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+}

@@ -1,19 +1,13 @@
 import { ReactElement } from 'react';
 
+import './index.css';
 const HomePage: React.FC = (): ReactElement => {
-  const gf_logo = '../../assets/gh.png';
   return (
-    <div className='container m-5'>
-      <h5>Download or clone allcode used in this app from:</h5>
-      <a
-        href='https://github.com/feedmelab/ui-collection.git'
-        target='_blank'
-        rel='noopener'
-        title='Download link for git project'
-      >
-        <img src={gf_logo} alt='Logo that route to  github ui-project' />
-      </a>
-    </div>
+    <main>
+      <div className='main container m-5'>
+        {/* <span>GitHub repository</span> */}
+      </div>
+    </main>
   );
 };
 

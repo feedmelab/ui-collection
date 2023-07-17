@@ -1,13 +1,7 @@
-import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-const Button = React.lazy(
-  () =>
-    import('./components/UI/Button') as Promise<{
-      default: React.ComponentType<{ url: string; id: string; text: string }>;
-    }>
-);
-
+import logo from '../src/assets/gh.png';
+import Button from './components/UI/Button';
 import ProjectsPage from './projects/ProjectsPage';
 import HomePage from './components/HomePage/HomePage';
 import DrawingCanvas from './components/Effects/DrawingCanvas/DrawingCanvas';
@@ -23,6 +17,18 @@ const App: React.FC = () => (
         <Button url='/projects' id='PROJECTS' text='LAST PROJECTS' />
         <Button url='/cv' id='CV' text='CV' />
         <Button url='/play' id='play' text='PLAY' />
+        <a
+          href='https://github.com/feedmelab/ui-collection.git'
+          target='_blank'
+          rel='noopener'
+          title='Download link for git project'
+        >
+          <img
+            src={logo}
+            alt='Logo that route to  github ui-project'
+            width='17px'
+          />
+        </a>
       </div>
 
       <main>
@@ -32,6 +38,7 @@ const App: React.FC = () => (
           {/* <Route path='/cv' element={<CvPage />} /> */}
         </Routes>
       </main>
+      <footer>Footer</footer>
     </div>
   </Router>
 );
