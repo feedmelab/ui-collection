@@ -75,7 +75,7 @@ const DrawingBeziers: React.FC = () => {
   useEffect(() => {
     const audioContext = new AudioContext();
     const analyser = audioContext.createAnalyser();
-    analyser.fftSize = 256;
+    analyser.fftSize = 2048;
     const bufferLength = analyser.frequencyBinCount;
     const dataArray = new Uint8Array(bufferLength);
 
@@ -111,7 +111,7 @@ const DrawingBeziers: React.FC = () => {
       };
 
       p.draw = () => {
-        p.background(248, 248, 248, 30);
+        p.background(248, 248, 248, 20);
         p.stroke(0, 23, 215, 20.9);
         p.fill(0, 123, 155, 20.9);
 
@@ -123,16 +123,17 @@ const DrawingBeziers: React.FC = () => {
           let y = p.map(
             p.noise(xoff, yoff),
             0,
-            1,
-            1 + average * 100, // amplify the average amplitude a bit
-            100 + average * 100 // amplify the average amplitude a bit
+            2,
+            1 + average * 2, // amplify the average amplitude a bit
+            100 + average * 2 // amplify the average amplitude a bit
           );
 
           p.vertex(x, y);
-          xoff += 0.05;
+          console.log(y);
+          xoff += 0.105;
         }
 
-        yoff += 0.01;
+        yoff += 0.018;
         p.vertex(p.width, p.height);
         p.vertex(0, p.height);
         p.endShape(p.CLOSE);
