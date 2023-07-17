@@ -1,10 +1,11 @@
 import Button from '../UI/Button/Button';
 import logo from '../../assets/gh.png';
 import { ReactElement } from 'react';
+import './index.css';
 
 const Header: React.FC = (): ReactElement => {
   return (
-    <div>
+    <div className='header-wrapper'>
       <Button url='/' id='home' text='HOME' />
       <Button url='/projects' id='PROJECTS' text='LAST PROJECTS' />
       <Button url='/cv' id='CV' text='CV' />
