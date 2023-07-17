@@ -5,10 +5,12 @@ import ProjectsPage from './projects/ProjectsPage';
 import HomePage from './components/HomePage/HomePage';
 import DrawingCanvas from './components/Effects/DrawingCanvas/DrawingCanvas';
 import Header from './components/Header/Header';
+import DrawingBeziers from './components/Effects/DrawingBeziers/DrawingBeziers';
 
 const App: React.FC = () => (
   <Router>
     <DrawingCanvas />
+
     <div className='container'>
       <Header />
       <main>
@@ -19,6 +21,8 @@ const App: React.FC = () => (
         </Routes>
       </main>
     </div>
+
+    <DrawingBeziers />
   </Router>
 );
 
