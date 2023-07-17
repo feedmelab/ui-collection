@@ -11,7 +11,7 @@ const HomePage: React.FC = (): ReactElement => {
         title='Download link for git project'
       >
         <img
-          src='/public/img/gh.png'
+          src='public/assets/gh.png'
           alt='Logo that route to  github ui-project'
         />
       </a>
