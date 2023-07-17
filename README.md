@@ -2,4 +2,4 @@
 
 ### DEMO
 
-ui-collection.vercel.app
+<a href='ui-collection.vercel.app'>ui-collection.vercel.app</a>
