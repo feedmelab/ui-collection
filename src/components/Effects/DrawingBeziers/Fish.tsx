@@ -10,6 +10,11 @@ import bottle_6 from '../../../assets/ampolla_6.png';
 import bottle_7 from '../../../assets/ampolla_7.png';
 import bottle_8 from '../../../assets/ampolla_8.png';
 import bottle_9 from '../../../assets/ampolla_9.png';
+import llampuda from '../../../assets/llampuda.png';
+import llobarro from '../../../assets/llobarro.png';
+import marli from '../../../assets/marli.png';
+import tonina from '../../../assets/tonina.png';
+import peix from '../../../assets/peix.png';
 
 interface FishProps {
   start?: number;
@@ -27,6 +32,11 @@ const Fish: React.FC<FishProps> = ({ start = 0 }) => {
     bottle_7,
     bottle_8,
     bottle_9,
+    llampuda,
+    llobarro,
+    marli,
+    tonina,
+    peix,
   ];
   const randomImageURL =
     imageArray[Math.floor(Math.random() * imageArray.length)];

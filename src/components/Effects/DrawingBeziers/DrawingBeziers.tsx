@@ -57,72 +57,11 @@ const DrawingBeziers: React.FC = () => {
     };
   }, []);
 
-  return <div className='sea' ref={myRef} />;
+  return (
+    <div className='sea' ref={myRef}>
+      <span className='save'>Save the globe</span>
+    </div>
+  );
 };
 
 export default DrawingBeziers;
-// import React, { useEffect, useRef } from 'react';
-// import p5 from 'p5';
-// import JumpingFish, {FishProps}  from './JumpingFish';
-
-// interface DrawingBeziersProps {
-//   fishProps: FishProps;
-// }
-
-// const DrawingBeziers: React.FC<DrawingBeziersProps> = ({ fishProps }) => {
-//   const myRef = useRef<HTMLDivElement | null>(null);
-
-//   useEffect(() => {
-//     let myP5: p5 | undefined;
-
-//     const sketch = (p: p5) => {
-//       let yoff = 0.0;
-
-//       p.setup = () => {
-//         p.createCanvas(p.windowWidth, 100);
-//         p.background(0);
-//       };
-
-//       p.draw = () => {
-//         p.background(0);
-//         p.stroke(0, 123, 255);
-//         p.noFill();
-
-//         p.beginShape();
-
-//         let xoff = 0;
-
-//         for (let x = 0; x <= p.width; x += 10) {
-//           let y = p.map(p.noise(xoff, yoff), 0, 1, 1, 100);
-//           p.vertex(x, y);
-//           xoff += 0.05;
-//         }
-
-//         yoff += 0.01;
-//         p.vertex(p.width, p.height);
-//         p.vertex(0, p.height);
-//         p.endShape(p.CLOSE);
-//       };
-
-//       p.windowResized = () => {
-//         p.resizeCanvas(p.windowWidth, 100);
-//       };
-//     };
-
-//     if (myRef && myRef.current) {
-//       myP5 = new p5(sketch, myRef.current);
-//     }
-
-//     return () => {
-//       myP5?.remove();
-//     };
-//   }, []);
-
-//   return (
-//     <div ref={myRef}>
-//       <JumpingFish {...fishProps} />
-//     </div>
-//   );
-// };
-
-// export default DrawingBeziers;
