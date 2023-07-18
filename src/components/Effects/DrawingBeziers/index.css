@@ -7,3 +7,20 @@
   padding: 0;
   /* pointer-events: none; */
 }
+.fish {
+  position: 'absolute';
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: 'red';
+  border-radius: '50%';
+}
+.peixet {
+  object-fit: cover;
+  z-index: 99999999;
+
+  position: absolute;
+  background-size: contain !important;
+  left: 0;
+}
