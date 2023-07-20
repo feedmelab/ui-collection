@@ -1,7 +1,7 @@
 {
   "name": "ts-project-base",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web Page with an ecosystem as a background",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",

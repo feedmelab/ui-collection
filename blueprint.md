@@ -1,16 +1,5 @@
-Welcome to {{ pkg.name }}. This is version {{ pkg.version }}!
+{{ template:title }}
 
-{
-"ids": {
-"github": "feedmelab/ui-collection",
-},
-"badges": [
-{
-"alt": "Custom badge",
-"url": "https://github.com/badges/shields",
-"img": "https://img.shields.io/badge/custom-badge-f39f37.svg"
-}
-]
-}
+Welcome to {{ pkg.name }}. This is version {{ pkg.version }}!
 
 <a href='https://ui-collection.vercel.app' target='_blank'>ui-collection.vercel.app</a>
