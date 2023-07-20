@@ -11,10 +11,14 @@ import DrawingBeziers from './components/Effects/DrawingBeziers/DrawingBeziers';
 import Fish from './components/Effects/DrawingBeziers/Fish';
 import Bird from './components/Effects/DrawingBeziers/Bird';
 import Pajaros from './components/Effects/DrawingBeziers/Pajaros';
+import Sun from './components/Effects/Ecosystem/Sun';
+import Moon from './components/Effects/Ecosystem/Moon';
 
 const App: React.FC = () => {
   return (
     <Router>
+      <Sun />
+      <Moon />
       <Fish />
       <Bird />
       <Pajaros />

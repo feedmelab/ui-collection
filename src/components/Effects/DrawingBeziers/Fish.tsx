@@ -43,7 +43,7 @@ const Fish: React.FC<FishProps> = ({ start = 0 }) => {
   const end: number = 2 + Math.random() * 4;
   const direction: number = Math.random() > 0.5 ? 1 : -1;
   const [jump, setJump] = useState(false);
-  const rWidth: number = 40 + Math.random() * 30;
+  const rWidth: number = 20 + Math.random() * 30;
 
   const { bottom, left, opacity, rotate } = useSpring({
     from: {

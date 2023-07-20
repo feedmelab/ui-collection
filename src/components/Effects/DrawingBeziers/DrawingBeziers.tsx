@@ -40,13 +40,13 @@ const DrawingBeziers: React.FC = () => {
 
       p.setup = () => {
         p.createCanvas(p.windowWidth, 100);
-        p.background(248, 248, 248, 20);
+        p.background(248, 248, 248, 0);
       };
 
       p.draw = () => {
-        p.background(248, 248, 248, 20);
-        p.stroke(0, 23, 215, 20.9);
-        p.fill(0, 123, 155, 20.9);
+        p.background(248, 248, 248, 0);
+        p.stroke(0, 238, 215, 20.9);
+        p.fill(0, 123, 205, 20.9);
 
         // Draw a polygon out of the wave points
         p.beginShape();
