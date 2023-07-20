@@ -69,7 +69,7 @@ const Sun: React.FC = () => {
           sunRef.current.style.height = sunSize;
         } else {
           // Durante la noche...
-          sunRef.current.style.bottom = '0%';
+          sunRef.current.style.bottom = '-90px';
           sunRef.current.style.left = '0%';
           sunRef.current.style.backgroundColor = 'darkgray';
           sunRef.current.style.width = '100px'; // Tamaño normal

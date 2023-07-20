@@ -41,7 +41,7 @@ const DrawingBeziers: React.FC = () => {
         // Iterate over horizontal pixels
         for (let x = 0; x <= p.width; x += 10) {
           // Calculate a y value according to noise, map to
-          let y = p.map(p.noise(xoff, yoff), 0, 1, 2, 100); // Using the volume state here
+          let y = p.map(p.noise(xoff, yoff), 0, 1, 2, 90); // Using the volume state here
 
           // Set the vertex
           p.vertex(x, y);

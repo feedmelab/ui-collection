@@ -8,7 +8,39 @@ const DrawingCanvas: React.FC = () => {
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const linesRef = useRef<Line[]>([]);
+  const [backgroundColor, setBackgroundColor] = useState('rgb(240,240,240)');
 
+  useEffect(() => {
+    const updateBackgroundColor = () => {
+      const now = new Date();
+      let hours = now.getHours();
+
+      // Ajuste las horas para que comience a las 6 AM y termine a las 6 PM
+      if (hours < 6) {
+        hours += 24; // Antes de las 6 AM se considera "noche del día anterior"
+      }
+      const secondsInDay =
+        (hours - 6) * 3600 + now.getMinutes() * 60 + now.getSeconds();
+
+      // Cálculo del porcentaje del día que ha transcurrido
+      const percentageOfDay = secondsInDay / (24 * 3600);
+
+      // Cálculo de los valores de RGB para el color de fondo
+      const red = Math.floor(240 - (240 - 29) * percentageOfDay);
+      const green = Math.floor(240 - (240 - 29) * percentageOfDay);
+      const blue = Math.floor(240 - (240 - 29) * percentageOfDay);
+      const alpha = 0.3 * percentageOfDay;
+
+      setBackgroundColor(`rgba(${red},${green},${blue},${alpha})`);
+    };
+
+    updateBackgroundColor();
+    const intervalId = setInterval(updateBackgroundColor, 1000); // Actualizar cada minuto
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas?.getContext('2d');
@@ -98,6 +130,7 @@ const DrawingCanvas: React.FC = () => {
       onMouseMove={startDrawing}
       ref={canvasRef}
       className='drawing-canvas'
+      style={{ backgroundColor }}
     />
   );
 };

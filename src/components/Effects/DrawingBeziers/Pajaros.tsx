@@ -13,7 +13,8 @@ const Pajaros: React.FC = () => {
 
   useEffect(() => {
     const newBlocks = [];
-    for (let i = 0; i < 4; i++) {
+    const ranBirds = Math.round(Math.random() * 14) + 1;
+    for (let i = 0; i < ranBirds; i++) {
       newBlocks.push({ x: -50, y: (Math.random() * window.innerHeight) / 2 }); // Ajustar la posición y a un valor fijo
     }
     setBlocks(newBlocks);
@@ -57,7 +58,7 @@ const Pajaros: React.FC = () => {
           const newBlocks = [];
           for (let i = 0; i < 4; i++) {
             newBlocks.push({
-              x: -150,
+              x: -190,
               y: (Math.random() * window.innerHeight) / 2,
             }); // Ajustar la posición y a un valor fijo
           }

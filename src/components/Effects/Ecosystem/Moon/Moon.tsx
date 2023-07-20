@@ -9,25 +9,25 @@ const Moon: React.FC = () => {
       const now = new Date();
       const currentSeconds = now.getHours() * 3600 + now.getMinutes() * 60;
 
-      const sunriseSeconds = 6 * 60 * 60; // 6:00
-      const sunsetSeconds = 21 * 60 * 60 + 20 * 60; // 21:20
+      const moonriseSeconds = 22 * 60 * 60; // 22:00
+      const moonsetSeconds = 7 * 60 * 60; // 7:00
 
       if (moonRef.current) {
         if (
-          currentSeconds >= sunsetSeconds ||
-          currentSeconds <= sunriseSeconds
+          currentSeconds >= moonriseSeconds ||
+          currentSeconds <= moonsetSeconds
         ) {
           // Durante la noche...
 
           // Duración de la noche en segundos
           const nightDurationInSeconds =
-            24 * 60 * 60 - sunsetSeconds + sunriseSeconds;
+            24 * 60 * 60 - moonsetSeconds + moonriseSeconds;
 
-          // Segundos transcurridos desde la puesta del sol
+          // Segundos transcurridos desde la puesta de la luna
           const elapsedSeconds =
-            currentSeconds > sunsetSeconds
-              ? currentSeconds - sunsetSeconds
-              : 24 * 60 * 60 - sunsetSeconds + currentSeconds;
+            currentSeconds > moonriseSeconds
+              ? currentSeconds - moonriseSeconds
+              : 24 * 60 * 60 - moonriseSeconds + currentSeconds;
 
           // Porcentaje de la noche que ha pasado
           const elapsedNightPercentage =
@@ -36,16 +36,26 @@ const Moon: React.FC = () => {
           // Posiciones actuales de la luna en los ejes X e Y (simulando una parábola)
           const moonPositionX = elapsedNightPercentage; // De 0% (izquierda) a 100% (derecha)
           const moonPositionY =
-            -Math.pow(elapsedNightPercentage - 50, 2) / 25 + 75; // De 25% (medio) a 0% (arriba) a 25% (medio)
+            -Math.pow(elapsedNightPercentage - 50, 2) / 25 + 100; // De 25% (medio) a 0% (arriba) a 25% (medio)
+
+          // Tamaño de la luna
+          let moonSize = '100px'; // Tamaño normal
+          if (elapsedNightPercentage < 10 || elapsedNightPercentage > 90) {
+            moonSize = '200px'; // Más grande cerca del amanecer y el atardecer
+          }
 
           moonRef.current.style.bottom = `${moonPositionY}%`;
           moonRef.current.style.left = `${moonPositionX}%`;
           moonRef.current.style.opacity = '1';
+          moonRef.current.style.width = moonSize;
+          moonRef.current.style.height = moonSize;
         } else {
           // Durante el día...
           moonRef.current.style.bottom = '0%';
           moonRef.current.style.left = '100%';
           moonRef.current.style.opacity = '0';
+          moonRef.current.style.width = '100px';
+          moonRef.current.style.height = '100px';
         }
       }
     };
