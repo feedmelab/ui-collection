@@ -49,7 +49,7 @@ const Pajaros: React.FC = () => {
         })
       );
 
-      if (blocks.every((block) => block.x > window.innerWidth)) {
+      if (blocks.every((block) => block.x > window.innerWidth + 100)) {
         clearInterval(interval);
         setIsActive(false);
 
