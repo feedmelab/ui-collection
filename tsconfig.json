@@ -4,7 +4,8 @@
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
   },
-  "include": ["src/**/*", "src/types/index.d.ts"]
+  "include": ["src/**/*", "src/types/index.d.ts", "global.d.ts"]
 }

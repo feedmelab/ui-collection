@@ -24,12 +24,12 @@ const Fish: React.FC<FishProps> = ({ start = 0 }) => {
   const initialPosition = Math.random() * window.innerWidth;
   const imageArray = [
     bottle_1,
-    bottle_2,
+
     bottle_3,
     bottle_4,
     bottle_5,
     bottle_6,
-    bottle_7,
+
     bottle_8,
     bottle_9,
     llampuda,
@@ -38,12 +38,12 @@ const Fish: React.FC<FishProps> = ({ start = 0 }) => {
     tonina,
     peix,
   ];
-  const randomImageURL =
+  const randomImageURL: string =
     imageArray[Math.floor(Math.random() * imageArray.length)];
-  const end = 2 + Math.random() * 4;
-  const direction = Math.random() > 0.5 ? 1 : -1;
+  const end: number = 2 + Math.random() * 4;
+  const direction: number = Math.random() > 0.5 ? 1 : -1;
   const [jump, setJump] = useState(false);
-  const rWidth = 40 + Math.random() * 30;
+  const rWidth: number = 40 + Math.random() * 30;
 
   const { bottom, left, opacity, rotate } = useSpring({
     from: {
@@ -88,9 +88,9 @@ const Fish: React.FC<FishProps> = ({ start = 0 }) => {
         transform:
           direction > 0
             ? bottom.to(
-                (b) => `rotateY(180deg) rotate(${b === end ? -10 : 0}deg)`
+                (b) => `rotateY(180deg) rotate(${b >= end ? -10 : 0}deg)`
               )
-            : bottom.to((b) => `rotate(${b === end ? -10 : 0}deg)`),
+            : bottom.to((b) => `rotate(${b <= end ? -10 : 0}deg)`),
       }}
     />
   );

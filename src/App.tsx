@@ -9,11 +9,15 @@ import Header from './components/Header/Header';
 //import JumpingFish from './components/Effects/DrawingBeziers';
 import DrawingBeziers from './components/Effects/DrawingBeziers/DrawingBeziers';
 import Fish from './components/Effects/DrawingBeziers/Fish';
+import Bird from './components/Effects/DrawingBeziers/Bird';
+import Pajaros from './components/Effects/DrawingBeziers/Pajaros';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Fish />
+      <Bird />
+      <Pajaros />
       <DrawingCanvas />
 
       <div className='container'>
