@@ -1,4 +1,4 @@
-<!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->Welcome to ts-project-base. This is version 1.0.0!
+Welcome to {{ pkg.name }}. This is version {{ pkg.version }}!
 
 {
 "ids": {

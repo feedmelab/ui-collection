@@ -2,6 +2,6 @@
   position: absolute;
   filter: blur(0.3rem);
   border-radius: 50%;
-  transition: bottom linear, left linear, background-color linear, width linear,
-    height linear;
+  transition: all bottom linear, left linear, background-color linear,
+    width linear, height linear;
 }

@@ -1,9 +1,22 @@
 import React, { useEffect, useRef } from 'react';
 import './index.css'; // Esto es para los estilos del componente
 
+function interpolateColor(
+  color1: [number, number, number],
+  color2: [number, number, number],
+  factor: number
+) {
+  const result = color1.slice();
+  for (let i = 0; i < 3; i++) {
+    result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
+  }
+  return result;
+}
+
 const Sun: React.FC = () => {
   const sunRef = useRef<HTMLDivElement | null>(null);
-
+  const startColor: [number, number, number] = [255, 223, 0]; // Amarillo
+  const endColor: [number, number, number] = [255, 165, 0]; // Naranja
   useEffect(() => {
     const updateSun = () => {
       const now = new Date();
@@ -27,7 +40,7 @@ const Sun: React.FC = () => {
 
           // Porcentaje del día que ha pasado
           const elapsedDayPercentage =
-            (elapsedSeconds / dayDurationInSeconds) * 100;
+            ((currentSeconds - sunriseSeconds) / dayDurationInSeconds) * 100;
 
           // Posiciones actuales del sol en los ejes X e Y (simulando una parábola)
           //const sunPositionX = elapsedDayPercentage; // De 0% (izquierda) a 100% (derecha)
@@ -42,17 +55,16 @@ const Sun: React.FC = () => {
           }
 
           // Color del sol
-          let sunColor = 'rgb(255, 223, 0)'; // Amarillo
-          if (elapsedDayPercentage > 30 && elapsedDayPercentage <= 60) {
-            sunColor = 'rgb(255, 238, 0)'; // Naranja
-          } else if (elapsedDayPercentage > 60) {
-            sunColor = 'rgb(255, 166, 0)'; // Rojo
-          }
+          const currentColor = interpolateColor(
+            startColor,
+            endColor,
+            elapsedDayPercentage / 100
+          );
 
           // Aplicar los cambios
           sunRef.current.style.bottom = `${sunPositionY}%`;
           sunRef.current.style.left = `${sunPositionX}%`;
-          sunRef.current.style.backgroundColor = sunColor;
+          sunRef.current.style.backgroundColor = `rgb(${currentColor[0]}, ${currentColor[1]}, ${currentColor[2]})`;
           sunRef.current.style.width = sunSize;
           sunRef.current.style.height = sunSize;
         } else {
