@@ -5,6 +5,7 @@ import paloma from '../../../assets/paloma.gif';
 import falcon from '../../../assets/falcon.gif';
 import oca from '../../../assets/oca.gif';
 import hawk from '../../../assets/hawk.gif';
+import smallhawk from '../../../assets/smallhawk.gif';
 
 type BirdFlying = {
   src: string;
@@ -16,6 +17,7 @@ const Bird: React.FC = () => {
   const birdArray: BirdFlying[] = [
     { src: bird, duration: 12000 },
     { src: falcon, duration: 22000 },
+    { src: smallhawk, duration: 15000 },
     { src: paloma, duration: 100000 },
     { src: oca, duration: 200000 },
     { src: hawk, duration: 100000 },
@@ -26,10 +28,10 @@ const Bird: React.FC = () => {
   const [key, setKey] = useState(Math.random());
   const { x } = useSpring({
     from: {
-      x: selectedPosition < 2 ? 0 : 1,
-      scale: selectedPosition < 2 ? 0 : 1,
+      x: selectedPosition < 3 ? 0 : 1,
+      scale: selectedPosition < 3 ? 0 : 1,
     },
-    to: { x: selectedPosition < 2 ? 1 : -10, scale: 2 },
+    to: { x: selectedPosition < 3 ? 1 : -10, scale: 2 },
     config: { duration: randomBird.duration }, // Usar la duración del pájaro seleccionado
     reset: true,
     onRest: () => {
