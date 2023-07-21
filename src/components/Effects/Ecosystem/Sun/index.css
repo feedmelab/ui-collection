@@ -2,6 +2,7 @@
   position: absolute;
   filter: blur(0.3rem);
   border-radius: 50%;
+  z-index: -1;
   transition: all bottom linear, left linear, background-color linear,
     width linear, height linear;
 }

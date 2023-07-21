@@ -30,6 +30,7 @@ const Pajaro: React.FC<PajaroProps> = ({ position }) => {
         backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
         transition: '0.5s',
+        zIndex: -1,
       }}
     />
   );
