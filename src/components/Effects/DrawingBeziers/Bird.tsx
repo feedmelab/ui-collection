@@ -3,6 +3,8 @@ import { useSpring, animated } from 'react-spring';
 import bird from '../../../assets/bird.gif';
 import paloma from '../../../assets/paloma.gif';
 import falcon from '../../../assets/falcon.gif';
+import oca from '../../../assets/oca.gif';
+import hawk from '../../../assets/hawk.gif';
 
 type BirdFlying = {
   src: string;
@@ -15,6 +17,8 @@ const Bird: React.FC = () => {
     { src: bird, duration: 12000 },
     { src: falcon, duration: 22000 },
     { src: paloma, duration: 100000 },
+    { src: oca, duration: 200000 },
+    { src: hawk, duration: 100000 },
   ];
   const selectedPosition = Math.floor(Math.random() * birdArray.length);
   const randomBird: BirdFlying = birdArray[selectedPosition];
@@ -50,8 +54,8 @@ const Bird: React.FC = () => {
               randomYStart + 10 * Math.sin((xVal * 100) / 10)
             }px, 0)`
         ),
-        filter:
-          'invert(100%) sepia(20%) saturate(200%) hue-rotate(100deg) brightness(30%) contrast(60%)',
+        // filter:
+        //   'invert(100%) sepia(20%) saturate(200%) hue-rotate(100deg) brightness(30%) contrast(60%)',
       }}
     />
   );

@@ -17,11 +17,6 @@ import Moon from './components/Effects/Ecosystem/Moon';
 const App: React.FC = () => {
   return (
     <Router>
-      <Sun />
-      <Moon />
-      <Fish />
-      <Bird />
-      <Pajaros />
       <DrawingCanvas />
 
       <div className='container'>
@@ -34,7 +29,11 @@ const App: React.FC = () => {
           </Routes>
         </main>
       </div>
-
+      <Sun />
+      <Moon />
+      <Fish />
+      <Bird />
+      <Pajaros />
       <DrawingBeziers />
     </Router>
   );

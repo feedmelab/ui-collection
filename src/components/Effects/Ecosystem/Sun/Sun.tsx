@@ -30,8 +30,6 @@ const Sun: React.FC = () => {
           currentSeconds >= sunriseSeconds &&
           currentSeconds <= sunsetSeconds
         ) {
-          // Durante el día...
-
           // Duración del día en segundos
           const dayDurationInSeconds = sunsetSeconds - sunriseSeconds;
 
@@ -43,16 +41,12 @@ const Sun: React.FC = () => {
             ((currentSeconds - sunriseSeconds) / dayDurationInSeconds) * 100;
 
           // Posiciones actuales del sol en los ejes X e Y (simulando una parábola)
-          //const sunPositionX = elapsedDayPercentage; // De 0% (izquierda) a 100% (derecha)
           const sunPositionX = elapsedDayPercentage * 0.9;
           const sunPositionY =
             -Math.pow(elapsedDayPercentage - 50, 2) / 25 + 82; // De 0% (abajo) a 50% (medio) a 0% (abajo)
 
           // Tamaño del sol
-          let sunSize = '100px'; // Tamaño normal
-          if (elapsedDayPercentage < 10 || elapsedDayPercentage > 190) {
-            sunSize = '200px'; // Más grande cerca del amanecer y el atardecer
-          }
+          let sunSize = `${200 - elapsedDayPercentage * 10 + 100}px`; // Tamaño normal
 
           // Color del sol
           const currentColor = interpolateColor(

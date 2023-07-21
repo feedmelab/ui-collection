@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './index.css';
-
+import moon from '../../../../assets/moon.png';
 const Moon: React.FC = () => {
   const moonRef = useRef<HTMLDivElement | null>(null);
 
@@ -34,21 +34,24 @@ const Moon: React.FC = () => {
             (elapsedSeconds / nightDurationInSeconds) * 100;
 
           // Posiciones actuales de la luna en los ejes X e Y (simulando una parábola)
-          const moonPositionX = elapsedNightPercentage; // De 0% (izquierda) a 100% (derecha)
+          const moonPositionX = elapsedNightPercentage;
           const moonPositionY =
-            -Math.pow(elapsedNightPercentage - 50, 2) / 25 + 100; // De 25% (medio) a 0% (arriba) a 25% (medio)
+            -Math.pow(elapsedNightPercentage - 50, 2) / 25 + 100;
 
-          // Tamaño de la luna
-          let moonSize = '100px'; // Tamaño normal
-          if (elapsedNightPercentage < 10 || elapsedNightPercentage > 90) {
-            moonSize = '200px'; // Más grande cerca del amanecer y el atardecer
-          }
+          // Tamaño de la luna en funcion de la hora
+          let moonSize = `${200 - elapsedNightPercentage * 10 + 60}px`;
 
           moonRef.current.style.bottom = `${moonPositionY}%`;
           moonRef.current.style.left = `${moonPositionX}%`;
           moonRef.current.style.opacity = '1';
           moonRef.current.style.width = moonSize;
           moonRef.current.style.height = moonSize;
+          console.log(
+            'entramos:',
+            100 + elapsedNightPercentage * 10,
+            'current size:',
+            moonSize
+          );
         } else {
           // Durante el día...
           moonRef.current.style.bottom = '0%';
@@ -68,7 +71,15 @@ const Moon: React.FC = () => {
     };
   }, []);
 
-  return <div className='moon' ref={moonRef}></div>;
+  return (
+    <div
+      className='moon'
+      ref={moonRef}
+      style={{
+        backgroundImage: `url(${moon})`,
+      }}
+    ></div>
+  );
 };
 
 export default Moon;
