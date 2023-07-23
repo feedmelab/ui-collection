@@ -18,11 +18,11 @@ const Bird: React.FC = () => {
   const birdArray: BirdFlying[] = [
     { src: bird, duration: 12000 },
     { src: falcon, duration: 22000 },
-    { src: smallhawk, duration: 15000 },
+    { src: smallhawk, duration: 25000 },
     { src: paloma, duration: 100000 },
     { src: oca, duration: 200000 },
     { src: hawk, duration: 100000 },
-    { src: eagle, duration: 1000 },
+    { src: eagle, duration: 200000 },
   ];
   const selectedPosition = Math.floor(Math.random() * birdArray.length);
   const randomBird: BirdFlying = birdArray[selectedPosition];
@@ -48,6 +48,7 @@ const Bird: React.FC = () => {
       key={key}
       style={{
         position: 'absolute',
+        zIndex: 9999999,
         width: 50,
         height: 50,
         opacity: 0.5,

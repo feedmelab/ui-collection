@@ -21,6 +21,7 @@ const App: React.FC = () => {
       <DrawingCanvas />
 
       <div className='container'>
+        <Bird />
         <Header />
         <Cloud />
         <main>
@@ -35,7 +36,7 @@ const App: React.FC = () => {
       <Sun />
       <Moon />
       <Fish />
-      <Bird />
+
       <Pajaros />
       <DrawingBeziers />
     </Router>
