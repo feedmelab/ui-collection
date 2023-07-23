@@ -7,22 +7,32 @@ import oca from '../../../assets/oca.gif';
 import hawk from '../../../assets/hawk.gif';
 import smallhawk from '../../../assets/smallhawk.gif';
 import eagle from '../../../assets/eagle.gif';
+import avio2 from '../../../assets/avio2.gif';
+import avio3 from '../../../assets/avio3.gif';
+import golondrines from '../../../assets/golondrines.gif';
+import './bird.css';
 
 type BirdFlying = {
   src: string;
   duration?: number;
+  width?: number;
 };
 
 const Bird: React.FC = () => {
+  const randomPlaneWidth = Math.round(Math.random() * 100 + 30);
   const randomYStart = Math.random() * 700;
   const birdArray: BirdFlying[] = [
-    { src: bird, duration: 12000 },
-    { src: falcon, duration: 22000 },
-    { src: smallhawk, duration: 25000 },
+    { src: bird, duration: 22000 },
+    { src: falcon, duration: 22000, width: 40 },
+    { src: avio3, duration: 29000, width: randomPlaneWidth },
+    { src: smallhawk, duration: 25000, width: 40 },
     { src: paloma, duration: 100000 },
     { src: oca, duration: 200000 },
     { src: hawk, duration: 100000 },
     { src: eagle, duration: 200000 },
+    { src: avio2, duration: 300000, width: 30 },
+
+    { src: golondrines, duration: 270000 },
   ];
   const selectedPosition = Math.floor(Math.random() * birdArray.length);
   const randomBird: BirdFlying = birdArray[selectedPosition];
@@ -30,10 +40,10 @@ const Bird: React.FC = () => {
   const [key, setKey] = useState(Math.random());
   const { x } = useSpring({
     from: {
-      x: selectedPosition < 3 ? 0 : 1,
-      scale: selectedPosition < 3 ? 0 : 1,
+      x: selectedPosition < 4 ? 0 : 1,
+      scale: selectedPosition < 4 ? 0 : 1,
     },
-    to: { x: selectedPosition < 3 ? 1 : -10, scale: 2 },
+    to: { x: selectedPosition < 4 ? 1 : -10, scale: 2 },
     config: { duration: randomBird.duration }, // Use the duration of the selected bird
     reset: true,
     onRest: () => {
@@ -45,14 +55,16 @@ const Bird: React.FC = () => {
 
   return (
     <animated.div
+      className='bird'
       key={key}
       style={{
         position: 'absolute',
         zIndex: 9999999,
-        width: 50,
-        height: 50,
-        opacity: 0.5,
-        background: `url(${randomBird.src}) no-repeat center/cover`,
+        height: '60px',
+        width: `${randomBird.width || 30}px`,
+        opacity: 0.95,
+
+        // background: `url(${randomBird.src}) no-repeat center/cover`,
         transform: x.to(
           (xVal) =>
             `translate3d(${xVal * 100}vw, ${
@@ -60,7 +72,9 @@ const Bird: React.FC = () => {
             }px, 0)`
         ),
       }}
-    />
+    >
+      <img src={randomBird.src} alt='' />
+    </animated.div>
   );
 };
 

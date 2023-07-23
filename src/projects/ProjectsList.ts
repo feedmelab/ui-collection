@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { Project } from './Project';
 
-function ProjectList({ projects: []}) {
-  return `<pre>{JSON.stringify(projects, null, '')}</pre>`;
+function ProjectList({ projects: [] }) {
+  return `<pre>{JSON.parse(projects, null, '')}</pre>`;
 }
 
 ProjectList.propTypes = {

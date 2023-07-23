@@ -3,4 +3,13 @@
 #root {
   margin: 0;
   padding: 0;
+  width: 100%;
+}
+.main-component {
+  position: absolute;
+
+  width: 100%;
+  top: 5%;
+  margin-right: 3rem;
+  z-index: 99999999999999;
 }

@@ -2,6 +2,7 @@
 html {
   font-family: 'Lunasima', sans-serif;
   cursor: crosshair;
+  overflow-x: hidden;
 }
 a {
   cursor: pointer !important;

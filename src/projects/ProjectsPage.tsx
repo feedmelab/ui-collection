@@ -5,7 +5,11 @@ function ProjectsPage() {
     <>
       <h1>Projects</h1>
       {MOCK_PROJECTS.map((project) => {
-        return <pre>{JSON.stringify(project, null, '')}</pre>;
+        return (
+          <pre>
+            <span>{JSON.stringify(project, null)}</span>
+          </pre>
+        );
       })}
     </>
   );

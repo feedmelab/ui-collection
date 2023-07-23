@@ -18,12 +18,13 @@ import Cloud from './components/Effects/Ecosystem/Cloud/Cloud';
 const App: React.FC = () => {
   return (
     <Router>
+      <Header />
       <DrawingCanvas />
-
-      <div className='container'>
-        <Bird />
-        <Header />
-        <Cloud />
+      <Sun />
+      <Moon />
+      <Bird />
+      <Cloud />
+      <div className='main-component'>
         <main>
           <Routes>
             <Route path='/' element={<HomePage />} />
@@ -32,12 +33,8 @@ const App: React.FC = () => {
           </Routes>
         </main>
       </div>
-
-      <Sun />
-      <Moon />
       <Fish />
-
-      <Pajaros />
+      {/* <Pajaros /> */}
       <DrawingBeziers />
     </Router>
   );

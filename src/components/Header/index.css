@@ -1,9 +1,17 @@
 .header-wrapper {
-  position: relative;
+  position: fixed;
+  width: 100vw;
   display: flex;
-  z-index: 99;
+  z-index: 9999999999;
   justify-content: center;
+  margin: auto;
 
-  border-bottom: 1px solid greenyellow;
+  background: radial-gradient(
+    circle at top,
+    transparent,
+    rgba(55, 55, 57, 0.03)
+  );
+
+  /* border-bottom: 1px solid rgba(55, 55, 57, 0.2); */
   padding-bottom: 1rem;
 }

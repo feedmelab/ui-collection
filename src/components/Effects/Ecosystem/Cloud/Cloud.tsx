@@ -44,7 +44,7 @@ const Cloud: React.FC<CloudProps> = ({
               y: y + p5.map(p5.noise(y), 0, 1, -15, 15),
               rad: p5.random(120, 160), // Random diameter for variety
               speed: p5.random(0.5, 0.2), // Random speed for each cloud
-              color: [p5.random(200, 255), p5.random(255, 255), 255], // Random color for each cloud
+              color: [p5.random(200, 255), p5.random(250, 250), 255], // Random color for each cloud
             });
           }
         }
