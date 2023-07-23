@@ -23,7 +23,7 @@ const Sun: React.FC = () => {
       const currentSeconds = now.getHours() * 3600 + now.getMinutes() * 60;
 
       const sunriseSeconds = 6 * 60 * 60; // 6:00
-      const sunsetSeconds = 22 * 60 * 60; // 21:20
+      const sunsetSeconds = 22 * 60 * 80; // 21:20
 
       if (sunRef.current) {
         if (
@@ -46,7 +46,8 @@ const Sun: React.FC = () => {
             -Math.pow(elapsedDayPercentage - 50, 2) / 25 + 82; // De 0% (abajo) a 50% (medio) a 0% (abajo)
 
           // Tamaño del sol
-          let sunSize = `${200 - elapsedDayPercentage * 10 + 100}px`; // Tamaño normal
+          let sunSize = `${(10 / elapsedDayPercentage) * 100 + 100}px`;
+          console.log(sunSize); // Tamaño normal
 
           // Color del sol
           const currentColor = interpolateColor(

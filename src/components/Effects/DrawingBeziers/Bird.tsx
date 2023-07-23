@@ -6,6 +6,7 @@ import falcon from '../../../assets/falcon.gif';
 import oca from '../../../assets/oca.gif';
 import hawk from '../../../assets/hawk.gif';
 import smallhawk from '../../../assets/smallhawk.gif';
+import eagle from '../../../assets/eagle.gif';
 
 type BirdFlying = {
   src: string;
@@ -21,8 +22,9 @@ const Bird: React.FC = () => {
     { src: paloma, duration: 100000 },
     { src: oca, duration: 200000 },
     { src: hawk, duration: 100000 },
+    { src: eagle, duration: 1000 },
   ];
-  const selectedPosition = Math.floor(Math.random() * birdArray.length);
+  const selectedPosition = Math.round(Math.random() * birdArray.length + 1);
   const randomBird: BirdFlying = birdArray[selectedPosition];
 
   const [key, setKey] = useState(Math.random());
