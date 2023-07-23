@@ -8,7 +8,7 @@ const DrawingCanvas: React.FC = () => {
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const linesRef = useRef<Line[]>([]);
-  const [backgroundColor, setBackgroundColor] = useState('rgb(140, 189, 245)');
+  const [backgroundColor, setBackgroundColor] = useState('rgb(201, 223, 249)');
 
   useEffect(() => {
     const updateBackgroundColor = () => {
@@ -26,10 +26,10 @@ const DrawingCanvas: React.FC = () => {
       const percentageOfDay = secondsInDay / (24 * 3600);
 
       // Cálculo de los valores de RGB para el color de fondo
-      const red = Math.floor(240 - (240 - 29) * percentageOfDay);
-      const green = Math.floor(240 - (240 - 29) * percentageOfDay);
-      const blue = Math.floor(240 - (240 - 29) * percentageOfDay);
-      const alpha = 0.3 * percentageOfDay;
+      const red = Math.floor(174 - (173 - 29) * percentageOfDay);
+      const green = Math.floor(207 - (116 - 29) * percentageOfDay);
+      const blue = Math.floor(245 - (130 - 29) * percentageOfDay);
+      const alpha = 0.03 * percentageOfDay;
 
       setBackgroundColor(`rgba(${red},${green},${blue},${alpha})`);
     };

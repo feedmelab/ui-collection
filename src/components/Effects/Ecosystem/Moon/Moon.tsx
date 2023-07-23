@@ -39,7 +39,7 @@ const Moon: React.FC = () => {
             -Math.pow(elapsedNightPercentage - 50, 2) / 25 + 100;
 
           // Tamaño de la luna en funcion de la hora
-          let moonSize = `${200 - elapsedNightPercentage * 10 + 60}px`;
+          let moonSize = `${200 - elapsedNightPercentage * 10 + 20}px`;
 
           moonRef.current.style.bottom = `${moonPositionY}%`;
           moonRef.current.style.left = `${moonPositionX}%`;

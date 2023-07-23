@@ -32,7 +32,7 @@ const Cloud: React.FC<CloudProps> = ({
         // Generate clouds
         for (let i = 0; i < numClouds; i++) {
           let xStart = p5.random(p5.width);
-          let y = p5.random(p5.height);
+          let y = p5.random(p5.height / 2);
 
           for (
             let x = xStart;

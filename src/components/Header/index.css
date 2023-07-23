@@ -2,14 +2,14 @@
   position: fixed;
   width: 100vw;
   display: flex;
-  z-index: 9999999999;
+  z-index: 999;
   justify-content: center;
   margin: auto;
 
   background: radial-gradient(
     circle at top,
     transparent,
-    rgba(55, 55, 57, 0.03)
+    rgba(55, 55, 170, 0.783)
   );
 
   /* border-bottom: 1px solid rgba(55, 55, 57, 0.2); */

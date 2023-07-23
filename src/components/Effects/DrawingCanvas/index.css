@@ -2,12 +2,12 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   height: 100vh;
-  z-index: 10;
+  z-index: 0;
 
-  /* background-color: rgb(240, 240, 240); */
+  background-color: rgb(176, 224, 230);
   /*
  pointer-events: none; */
 }

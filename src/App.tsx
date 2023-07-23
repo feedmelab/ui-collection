@@ -20,21 +20,20 @@ const App: React.FC = () => {
     <Router>
       <Header />
       <DrawingCanvas />
+      <Cloud />
       <Sun />
+      <div className='main-component'>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/projects' element={<ProjectsPage />} />
+          {/* <Route path='/cv' element={<CvPage />} /> */}
+        </Routes>
+      </div>
+
       <Moon />
       <Bird />
-      <Cloud />
-      <div className='main-component'>
-        <main>
-          <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/projects' element={<ProjectsPage />} />
-            {/* <Route path='/cv' element={<CvPage />} /> */}
-          </Routes>
-        </main>
-      </div>
       <Fish />
-      {/* <Pajaros /> */}
+      <Pajaros />
       <DrawingBeziers />
     </Router>
   );

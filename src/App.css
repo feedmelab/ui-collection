@@ -7,3 +7,12 @@ html {
 a {
   cursor: pointer !important;
 }
+.main-component {
+  position: absolute;
+  display: block;
+  width: 100% !important;
+  margin-right: 10px !important;
+  top: 5%;
+
+  z-index: -3;
+}
