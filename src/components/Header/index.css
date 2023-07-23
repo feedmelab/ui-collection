@@ -2,7 +2,7 @@
   position: fixed;
   width: 100vw;
   display: flex;
-  z-index: 9999999999;
+  z-index: 12;
   justify-content: center;
   margin: auto;
 

@@ -23,7 +23,7 @@ const Sun: React.FC = () => {
       const currentSeconds = now.getHours() * 3600 + now.getMinutes() * 60;
 
       const sunriseSeconds = 6 * 60 * 60; // 6:00
-      const sunsetSeconds = 22 * 60 * 80; // 21:20
+      const sunsetSeconds = 22 * 60 * 60; // 21:20
 
       if (sunRef.current) {
         if (
@@ -38,15 +38,17 @@ const Sun: React.FC = () => {
 
           // Porcentaje del día que ha pasado
           const elapsedDayPercentage =
-            ((currentSeconds - sunriseSeconds) / dayDurationInSeconds) * 100;
+            ((currentSeconds - sunriseSeconds) /
+              (sunsetSeconds - sunriseSeconds)) *
+            100;
 
           // Posiciones actuales del sol en los ejes X e Y (simulando una parábola)
           const sunPositionX = elapsedDayPercentage * 0.9;
           const sunPositionY =
-            -Math.pow(elapsedDayPercentage - 50, 2) / 25 + 82; // De 0% (abajo) a 50% (medio) a 0% (abajo)
+            -Math.pow(elapsedDayPercentage - 50, 2) / 25 + 92; // De 0% (abajo) a 50% (medio) a 0% (abajo)
 
           // Tamaño del sol
-          let sunSize = `${(10 / elapsedDayPercentage) * 100 + 100}px`;
+          let sunSize = `${(10 / elapsedDayPercentage) * 5 + 50}px`;
           console.log(sunSize); // Tamaño normal
 
           // Color del sol

@@ -53,9 +53,24 @@ const Cloud: React.FC<CloudProps> = ({
       p5.draw = () => {
         (p5.clear as any)();
 
+        // Calculate the current time
+        const now = new Date();
+        let hours = now.getHours();
+
+        // Adjust the hours so it starts at 6 AM and ends at 6 PM
+        if (hours < 6) {
+          hours += 24; // Before 6 AM is considered "night of the previous day"
+        }
+
+        // Calculate the percentage of the day that has passed
+        const percentageOfDay = ((hours - 6) * 3600) / (12 * 3600);
+
+        // Adjust the alpha based on the percentage of the day
+        const alpha = 10 + percentageOfDay;
+
         // Draw and move clouds
         for (let cloud of clouds) {
-          p5.fill(cloud.color[0], cloud.color[1], cloud.color[2], 100);
+          p5.fill(cloud.color[0], cloud.color[1], cloud.color[2], alpha);
           p5.ellipse(cloud.x, cloud.y, cloud.rad);
           cloud.x += cloud.speed; // Move cloud
           if (cloud.x - cloud.rad > p5.width) {

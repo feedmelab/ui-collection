@@ -11,6 +11,22 @@ const DrawingCanvas: React.FC = () => {
   const [backgroundColor, setBackgroundColor] = useState('rgb(140, 189, 245)');
 
   useEffect(() => {
+    const startColor: [number, number, number] = [135, 206, 235]; // Sky Blue
+    const middleColor: [number, number, number] = [135, 186, 280]; // Midnight Blue
+    const endColor: [number, number, number] = [0, 0, 0]; // Black
+
+    const interpolateColor = (
+      color1: [number, number, number],
+      color2: [number, number, number],
+      factor: number
+    ) => {
+      const result = color1.slice();
+      for (let i = 0; i < 3; i++) {
+        result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
+      }
+      return result;
+    };
+
     const updateBackgroundColor = () => {
       const now = new Date();
       let hours = now.getHours();
@@ -19,19 +35,19 @@ const DrawingCanvas: React.FC = () => {
       if (hours < 6) {
         hours += 24; // Antes de las 6 AM se considera "noche del día anterior"
       }
-      const secondsInDay =
-        (hours - 6) * 3600 + now.getMinutes() * 60 + now.getSeconds();
 
-      // Cálculo del porcentaje del día que ha transcurrido
-      const percentageOfDay = secondsInDay / (24 * 3600);
+      // Calculo del factor
+      const factor = hours < 18 ? (hours - 6) / 12 : (hours - 18) / 6;
 
-      // Cálculo de los valores de RGB para el color de fondo
-      const red = Math.floor(140 - 29 * percentageOfDay);
-      const green = Math.floor(189 - 29 * percentageOfDay);
-      const blue = Math.floor(245 - 29 * percentageOfDay);
-      const alpha = 0.5 * percentageOfDay;
+      // Interpolacion del color
+      const currentColor =
+        hours < 18
+          ? interpolateColor(startColor, middleColor, factor)
+          : interpolateColor(middleColor, endColor, factor);
 
-      setBackgroundColor(`rgba(${red},${green},${blue},${alpha})`);
+      setBackgroundColor(
+        `rgba(${currentColor[0]}, ${currentColor[1]}, ${currentColor[2]}, 1)`
+      );
     };
 
     updateBackgroundColor();
@@ -41,6 +57,7 @@ const DrawingCanvas: React.FC = () => {
       clearInterval(intervalId);
     };
   }, []);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const context = canvas?.getContext('2d');

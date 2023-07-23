@@ -13,12 +13,14 @@ import Bird from './components/Effects/DrawingBeziers/Bird';
 import Pajaros from './components/Effects/DrawingBeziers/Pajaros';
 import Sun from './components/Effects/Ecosystem/Sun';
 import Moon from './components/Effects/Ecosystem/Moon';
-import Cloud from './components/Effects/Ecosystem/Cloud/Cloud';
+import Cloud from './components/Effects/Ecosystem/Cloud';
+import Star from './components/Effects/Ecosystem/Star';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Header />
+      <Star />
       <DrawingCanvas />
       <Sun />
       <Moon />

@@ -54,8 +54,8 @@ const Moon: React.FC = () => {
           );
         } else {
           // Durante el día...
-          moonRef.current.style.bottom = '0%';
-          moonRef.current.style.left = '100%';
+          moonRef.current.style.bottom = '0px';
+          moonRef.current.style.left = '0px';
           moonRef.current.style.opacity = '0';
           moonRef.current.style.width = '100px';
           moonRef.current.style.height = '100px';
