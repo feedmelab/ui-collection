@@ -1,0 +1,4 @@
+.cloud {
+  z-index: 11;
+  filter: blur(28px);
+}

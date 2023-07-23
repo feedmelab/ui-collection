@@ -10,7 +10,7 @@ import eagle from '../../../assets/eagle.gif';
 
 type BirdFlying = {
   src: string;
-  duration: number;
+  duration?: number;
 };
 
 const Bird: React.FC = () => {
@@ -24,7 +24,7 @@ const Bird: React.FC = () => {
     { src: hawk, duration: 100000 },
     { src: eagle, duration: 1000 },
   ];
-  const selectedPosition = Math.round(Math.random() * birdArray.length + 1);
+  const selectedPosition = Math.floor(Math.random() * birdArray.length);
   const randomBird: BirdFlying = birdArray[selectedPosition];
 
   const [key, setKey] = useState(Math.random());
@@ -34,7 +34,7 @@ const Bird: React.FC = () => {
       scale: selectedPosition < 3 ? 0 : 1,
     },
     to: { x: selectedPosition < 3 ? 1 : -10, scale: 2 },
-    config: { duration: randomBird.duration }, // Usar la duración del pájaro seleccionado
+    config: { duration: randomBird.duration }, // Use the duration of the selected bird
     reset: true,
     onRest: () => {
       // set a new key after a random delay to restart the animation
@@ -42,7 +42,7 @@ const Bird: React.FC = () => {
       setTimeout(() => setKey(Math.random()), delay);
     },
   });
-  console.log('A bird is flying');
+
   return (
     <animated.div
       key={key}
@@ -51,15 +51,13 @@ const Bird: React.FC = () => {
         width: 50,
         height: 50,
         opacity: 0.5,
-        background: `url(${randomBird.src}) no-repeat center/cover`, // Usar la URL del pájaro seleccionado
+        background: `url(${randomBird.src}) no-repeat center/cover`,
         transform: x.to(
           (xVal) =>
             `translate3d(${xVal * 100}vw, ${
               randomYStart + 10 * Math.sin((xVal * 100) / 10)
             }px, 0)`
         ),
-        // filter:
-        //   'invert(100%) sepia(20%) saturate(200%) hue-rotate(100deg) brightness(30%) contrast(60%)',
       }}
     />
   );

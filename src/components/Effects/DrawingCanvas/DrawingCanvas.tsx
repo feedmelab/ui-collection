@@ -8,7 +8,7 @@ const DrawingCanvas: React.FC = () => {
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const linesRef = useRef<Line[]>([]);
-  const [backgroundColor, setBackgroundColor] = useState('rgb(240,240,240)');
+  const [backgroundColor, setBackgroundColor] = useState('rgb(140, 189, 245)');
 
   useEffect(() => {
     const updateBackgroundColor = () => {

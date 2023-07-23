@@ -1,5 +1,7 @@
 .header-wrapper {
+  position: relative;
   display: flex;
+  z-index: 99;
   justify-content: center;
 
   border-bottom: 1px solid greenyellow;
