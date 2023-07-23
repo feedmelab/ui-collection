@@ -26,10 +26,10 @@ const DrawingCanvas: React.FC = () => {
       const percentageOfDay = secondsInDay / (24 * 3600);
 
       // Cálculo de los valores de RGB para el color de fondo
-      const red = Math.floor(240 - (240 - 29) * percentageOfDay);
-      const green = Math.floor(240 - (240 - 29) * percentageOfDay);
-      const blue = Math.floor(240 - (240 - 29) * percentageOfDay);
-      const alpha = 0.3 * percentageOfDay;
+      const red = Math.floor(140 - 29 * percentageOfDay);
+      const green = Math.floor(189 - 29 * percentageOfDay);
+      const blue = Math.floor(245 - 29 * percentageOfDay);
+      const alpha = 0.5 * percentageOfDay;
 
       setBackgroundColor(`rgba(${red},${green},${blue},${alpha})`);
     };

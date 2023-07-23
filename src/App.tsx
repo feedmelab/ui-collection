@@ -34,7 +34,7 @@ const App: React.FC = () => {
         </main>
       </div>
       <Fish />
-      {/* <Pajaros /> */}
+      <Pajaros />
       <DrawingBeziers />
     </Router>
   );

@@ -18,15 +18,15 @@ const Pajaro: React.FC<PajaroProps> = ({ position }) => {
   const [image, setImage] = useState(
     images[Math.floor(Math.random() * images.length)]
   );
-
+  const randomSize = Math.floor(Math.random() * 30);
   return (
     <div
       style={{
         position: 'absolute',
         top: position.y,
         left: position.x,
-        height: '30px',
-        width: '30px',
+        height: randomSize,
+        width: randomSize,
         backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
         transition: '0.5s',
