@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import bird from '../../../assets/bird.gif';
+import bird2 from '../../../assets/bird.gif';
 
 interface Position {
   x: number;

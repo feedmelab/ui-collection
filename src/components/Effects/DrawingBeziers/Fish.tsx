@@ -82,7 +82,7 @@ const Fish: React.FC<FishProps> = ({ start = 0 }) => {
         bottom: bottom.to((b) => `${b}rem`),
         left,
         width: `${rWidth}px`,
-        height: '50px',
+        height: `${rWidth}px`,
         opacity: bottom.to([start, end], [0, 1]),
         background: `url(${randomImageURL}) no-repeat center/cover`,
         transform:
