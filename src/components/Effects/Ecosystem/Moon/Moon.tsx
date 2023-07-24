@@ -36,11 +36,11 @@ const Moon: React.FC = () => {
           // Posiciones actuales de la luna en los ejes X e Y (simulando una parábola)
           const moonPositionX = elapsedNightPercentage;
           const moonPositionY =
-            -Math.pow(elapsedNightPercentage - 50, 2) / 25 + 100;
+            -Math.pow(elapsedNightPercentage - 51, 2) / 25 + 100;
 
           // Tamaño de la luna en funcion de la hora
           let moonSize = `${200 - elapsedNightPercentage * 10 + 60}px`;
-
+          console.log(moonRef.current?.style.bottom);
           moonRef.current.style.bottom = `${moonPositionY}%`;
           moonRef.current.style.left = `${moonPositionX}%`;
           moonRef.current.style.opacity = '1';
@@ -54,7 +54,7 @@ const Moon: React.FC = () => {
           // );
         } else {
           // Durante el día...
-          moonRef.current.style.bottom = '0px';
+          moonRef.current.style.bottom = '-100px';
           moonRef.current.style.left = '0px';
           moonRef.current.style.opacity = '0';
           moonRef.current.style.width = '100px';
@@ -64,6 +64,7 @@ const Moon: React.FC = () => {
     };
 
     updateMoon();
+
     const intervalId = setInterval(updateMoon, 1000);
 
     return () => {
