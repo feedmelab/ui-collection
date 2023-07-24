@@ -3,9 +3,9 @@ import { Project } from './Project';
 export const MOCK_PROJECTS = [
   new Project({
     id: 1,
-    name: 'Johnson - Kutch',
+    name: 'Podcaster',
     description:
-      'Fully-configurable intermediate framework. Ullam occaecati libero laudantium nihil voluptas omnis.',
+      'SPA CONECTED TO A APPLE API THAT SHOWS A HUGE LIST OF FREE PODCAST AVALIABLE, TSTACK:REACT, JAVASCRIPT, FECTH, PROMISES, ASYNC/AWAIT, STYLED COMPONENTS...',
     imageUrl: '/assets/placeimg_500_300_arch4.jpg',
     contractTypeId: 3,
     contractSignedOn: '2013-08-04T22:39:41.473Z',
@@ -14,7 +14,7 @@ export const MOCK_PROJECTS = [
   }),
   new Project({
     id: 2,
-    name: 'Wisozk Group',
+    name: 'ECOSYSTEM',
     description:
       'Centralized interactive application. Exercitationem nulla ut ipsam vero quasi enim quos doloribus voluptatibus.',
     imageUrl: '/assets/placeimg_500_300_arch1.jpg',
@@ -25,9 +25,9 @@ export const MOCK_PROJECTS = [
   }),
   new Project({
     id: 3,
-    name: 'Denesik LLC',
+    name: 'AIKREATE SAAS',
     description:
-      'Re-contextualized dynamic moratorium. Aut nulla soluta numquam qui dolor architecto et facere dolores.',
+      'SaaS APPLICATION TO AUDIT SCHOOL DAY BY DAY WORK, CONTROL THE EVOLUTION OF ALUMN KNOWLEDGE DURING THE COURSE. TSTACK: NODE, TYPESCRIPT, REST API, ',
     imageUrl: '/assets/placeimg_500_300_arch12.jpg',
     contractTypeId: 6,
     contractSignedOn: '2016-06-26T18:24:01.706Z',

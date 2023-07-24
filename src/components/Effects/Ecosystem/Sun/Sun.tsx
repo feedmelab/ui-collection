@@ -49,7 +49,7 @@ const Sun: React.FC = () => {
 
           // Tamaño del sol
           let sunSize = `${(10 / elapsedDayPercentage) * 5 + 50}px`;
-          console.log(sunSize); // Tamaño normal
+          // console.log(sunSize); // Tamaño normal
 
           // Color del sol
           const currentColor = interpolateColor(

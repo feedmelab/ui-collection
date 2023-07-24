@@ -1,11 +1,11 @@
 .drawing-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  overflow: hidden;
-  height: 100vh;
+  position: absolute;
 
+  width: 100vw;
+  /* overflow: hidden; */
+  /* background: transparent; */
+  height: 100vh;
+  z-index: 8;
   /* background-color: rgb(240, 240, 240); */
   /*
  pointer-events: none; */

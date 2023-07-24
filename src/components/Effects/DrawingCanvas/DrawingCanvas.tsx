@@ -147,7 +147,7 @@ const DrawingCanvas: React.FC = () => {
       onMouseMove={startDrawing}
       ref={canvasRef}
       className='drawing-canvas'
-      style={{ backgroundColor }}
+      //style={{ backgroundColor }}
     />
   );
 };

@@ -7,3 +7,9 @@ html {
 a {
   cursor: pointer !important;
 }
+.wrapper-app {
+  position: absolute;
+  width: 100%;
+  height: 100vw;
+  overflow-y: hidden;
+}

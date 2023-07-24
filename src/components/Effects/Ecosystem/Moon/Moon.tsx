@@ -46,12 +46,12 @@ const Moon: React.FC = () => {
           moonRef.current.style.opacity = '1';
           moonRef.current.style.width = moonSize;
           moonRef.current.style.height = moonSize;
-          console.log(
-            'entramos:',
-            100 + elapsedNightPercentage * 10,
-            'current size:',
-            moonSize
-          );
+          // console.log(
+          //   'entramos:',
+          //   100 + elapsedNightPercentage * 10,
+          //   'current size:',
+          //   moonSize
+          // );
         } else {
           // Durante el día...
           moonRef.current.style.bottom = '0px';

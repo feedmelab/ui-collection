@@ -61,13 +61,7 @@ const Bird: React.FC = () => {
       className='bird'
       key={key}
       style={{
-        position: 'absolute',
-        zIndex: 9999999,
-        height: '60px',
         width: `${randomBird.width || 30}px`,
-        opacity: 0.95,
-
-        // background: `url(${randomBird.src}) no-repeat center/cover`,
         transform: x.to(
           (xVal) =>
             `translate3d(${xVal * 100}vw, ${

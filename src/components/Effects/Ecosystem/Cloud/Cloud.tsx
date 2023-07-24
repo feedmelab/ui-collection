@@ -49,7 +49,7 @@ const Cloud: React.FC<CloudProps> = ({
           }
         }
       };
-
+      console.log(sketchRef.current);
       p5.draw = () => {
         (p5.clear as any)();
 
@@ -66,7 +66,7 @@ const Cloud: React.FC<CloudProps> = ({
         const percentageOfDay = ((hours - 6) * 3600) / (12 * 3600);
 
         // Adjust the alpha based on the percentage of the day
-        const alpha = 10 + percentageOfDay;
+        const alpha = 100 + percentageOfDay;
 
         // Draw and move clouds
         for (let cloud of clouds) {
@@ -89,7 +89,7 @@ const Cloud: React.FC<CloudProps> = ({
   return (
     <div
       ref={sketchRef}
-      style={{ marginTop: seaHeight * 2 }}
+      // style={{ marginBottom: seaHeight * 2 }}
       className='cloud'
     />
   );

@@ -40,10 +40,10 @@ const Star: React.FC<StarProps> = ({ numStars = 100 }) => {
               percentageOfDay + p5.random(0, percentageOfDay - 100)
             ),
           });
-          console.log(
-            '%: ',
-            stars.every((t) => console.log(t))
-          );
+          // console.log(
+          //   '%: ',
+          //   stars.every((t) => console.log(t))
+          // );
         }
       };
 
