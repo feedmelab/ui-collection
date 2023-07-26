@@ -4,47 +4,57 @@ import './index.css';
 
 interface Project {
   id: string;
+  visible: boolean;
 }
 
 function ProjectsPage() {
-  const [visibleProjects, setVisibleProjects] = useState<Project[]>([]);
+  const [visibleProjects, setVisibleProjects] = useState<Project[]>(
+    MOCK_PROJECTS.map((project) => ({
+      ...project,
+      id: project.id ? project.id.toString() : '',
+      visible: false,
+    }))
+  );
+  const [projectCounter, setProjectCounter] = useState(0); // Use useState to keep track of projectCounter
 
   useEffect(() => {
-    let projectCounter = 0;
     const intervalId = setInterval(() => {
-      if (projectCounter < MOCK_PROJECTS.length) {
-        const project = MOCK_PROJECTS[projectCounter];
-        if (project) {
-          setVisibleProjects((oldArray) => [
-            ...oldArray,
-            {
-              ...project,
-              id: project.id ? project.id.toString() : '',
-            },
-          ]);
-        }
-        projectCounter++;
+      if (projectCounter < visibleProjects.length) {
+        setVisibleProjects((projects) =>
+          projects.map((project, index) => {
+            return index === projectCounter
+              ? { ...project, visible: true }
+              : project;
+          })
+        );
+        setProjectCounter((prevCounter) => prevCounter + 1); // Use setProjectCounter to update the value
       } else {
         clearInterval(intervalId);
       }
-    }, 500);
+    }, 200);
 
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [visibleProjects.length, projectCounter]); // Don't forget to include projectCounter in the dependency list
 
   return (
     <>
-      <h1>Projects</h1>
-      <div className='card-wrapper'>
-        {visibleProjects.map((project) => {
-          return (
-            <div className='card visible' key={project.id}>
-              <span>{JSON.stringify(project, null)}</span>
-            </div>
-          );
-        })}
+      {console.log(visibleProjects.length)}
+      <div className='container'>
+        <h1>Projects</h1>
+        <div className='card-wrapper'>
+          {visibleProjects.map((project) => {
+            return (
+              <div
+                className={`card ${project.visible ? 'visible' : ''}`}
+                key={project.id}
+              >
+                <span>{JSON.stringify(project, null)}</span>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );

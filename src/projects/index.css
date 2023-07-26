@@ -1,26 +1,41 @@
 .card {
-  width: 300px;
+  width: 100px;
+  min-height: 230px;
   border-radius: 2rem !important;
-  padding: 1rem;
-  opacity: 0;
+  padding: 2rem;
+
   filter: blur(30);
-  transform: scale(0); /* Make card invisible and scaled down */
-  transition: all bottom linear, left linear, background-color linear,
-    width linear, height linear;
+  transform: scale(0.8); /* Make card invisible and scaled down */
+  transition: all 400ms;
+  opacity: 0 !important; /* Initial opacity is 0 (invisible) */
 }
 
-.card.visible {
-  width: 300px;
-  opacity: 1;
+.visible {
+  filter: blur(0);
+  opacity: 1 !important; /* When card is visible, opacity is 1 (fully visible) */
   transform: scale(1.1); /* Scale card to original size when visible */
 }
+.container {
+  overflow-y: scroll;
 
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+h1 {
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+}
 .card-wrapper {
+  overflow: scroll;
+  height: 100%;
   display: flex;
   flex-flow: row wrap;
   flex-direction: row;
   padding: 2rem 12rem;
   justify-content: center;
   gap: 2rem;
+  z-index: 20;
   align-items: center;
 }

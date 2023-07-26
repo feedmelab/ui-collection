@@ -26,8 +26,8 @@ const Pajaros: React.FC = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setBlocks((blocks) =>
-        blocks.map((block) => {
+      setBlocks((currentBlocks) => {
+        const updatedBlocks = currentBlocks.map((block) => {
           const distance = Math.hypot(
             block.x - mousePos.x,
             block.y - mousePos.y
@@ -47,29 +47,31 @@ const Pajaros: React.FC = () => {
             x: newX,
             y: block.y,
           };
-        })
-      );
+        });
 
-      if (blocks.every((block) => block.x > window.innerWidth + 100)) {
-        clearInterval(interval);
-        setIsActive(false);
+        if (updatedBlocks.every((block) => block.x > window.innerWidth + 100)) {
+          clearInterval(interval);
+          setIsActive(false);
 
-        setTimeout(() => {
-          const newBlocks = [];
-          for (let i = 0; i < 4; i++) {
-            newBlocks.push({
-              x: -190,
-              y: (Math.random() * window.innerHeight) / 2,
-            }); // Ajustar la posición y a un valor fijo
-          }
-          setBlocks(newBlocks);
-          setIsActive(true);
-        }, Math.random() * 15000);
-      }
+          setTimeout(() => {
+            const newBlocks = [];
+            for (let i = 0; i < 4; i++) {
+              newBlocks.push({
+                x: 10,
+                y: (Math.random() * window.innerHeight) / 2,
+              });
+            }
+            setBlocks(newBlocks);
+            setIsActive(true);
+          }, Math.random() * 15000);
+        }
+
+        return updatedBlocks;
+      });
     }, 20);
 
     return () => clearInterval(interval);
-  }, [mousePos, blocks]);
+  }, [mousePos, blocks]); // remove blocks from the dependency array
 
   return (
     <div onMouseMove={handleMouseMove}>
