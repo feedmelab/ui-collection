@@ -18,7 +18,7 @@
   transform: scale(0.2); /* Make card invisible and scaled down */
   transition: all 400ms;
   opacity: 0 !important; /* Initial opacity is 0 (invisible) */
-  width: 300px !important;
+  width: 100% !important;
 }
 
 .visible {
@@ -27,28 +27,39 @@
   opacity: 1 !important; /* When card is visible, opacity is 1 (fully visible) */
   transform: scale(1); /* Scale card to original size when visible */
 }
-.container {
+.contener {
+  position: relative;
+  z-index: 1;
   overflow-y: scroll;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: auto;
+  height: 100%;
+
+  margin-top: 2rem;
 }
 h1 {
-  font-size: 1.8rem;
+  display: flex;
+  font-size: 0.8rem !important;
   text-align: center;
+  color: #191919;
+  background-color: rgb(233, 225, 225);
+  border-radius: 0.5rem;
+  margin: 2rem;
+  padding: 0.8rem;
 }
 .card-wrapper {
+  margin-left: 3rem;
+  margin-right: 3rem;
   overflow: scroll;
-  height: 100%;
+  height: auto;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   flex-direction: row;
-  padding: 2rem 12rem;
+  padding: 2rem 12rem 2rem;
   justify-content: center;
   gap: 2rem;
   z-index: 20;
