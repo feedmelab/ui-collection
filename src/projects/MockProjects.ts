@@ -16,7 +16,7 @@ export const MOCK_PROJECTS = [
     id: 2,
     name: 'ECOSYSTEM',
     description:
-      'Centralized interactive application. Exercitationem nulla ut ipsam vero quasi enim quos doloribus voluptatibus.',
+      'Portfolio of my works in a Ecosustem environtment that interacts in real time based on API data from space. TSTACK: React, Typescript, CSS, WEBPACK, Perlin Noise.',
     imageUrl: '/assets/placeimg_500_300_arch1.jpg',
     contractTypeId: 4,
     contractSignedOn: '2012-08-06T21:21:31.419Z',
@@ -27,10 +27,10 @@ export const MOCK_PROJECTS = [
     id: 3,
     name: 'AIKREATE SAAS',
     description:
-      'SaaS APPLICATION TO AUDIT SCHOOL DAY BY DAY WORK, CONTROL THE EVOLUTION OF ALUMN KNOWLEDGE DURING THE COURSE. TSTACK: NODE, TYPESCRIPT, REST API, ',
+      'SaaS APPLICATION TO AUDIT SCHOOL DAY BY DAY WORK, CONTROL THE EVOLUTION OF ALUMN KNOWLEDGE DURING THE COURSE. TSTACK: NODE, TYPESCRIPT, REST API, VAGRANT, DOCKER. ',
     imageUrl: '/assets/placeimg_500_300_arch12.jpg',
     contractTypeId: 6,
-    contractSignedOn: '2016-06-26T18:24:01.706Z',
+    contractSignedOn: '2022-06-26T18:24:01.706Z',
     budget: 29729,
     isActive: true,
   }),
