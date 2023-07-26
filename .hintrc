@@ -3,6 +3,23 @@
     "development"
   ],
   "hints": {
-    "no-inline-styles": "off"
-  }
+    "no-inline-styles": "off",
+    "backdrop-filter": "on",
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "backdrop-filter",
+          "backdrop-filter",
+          "backdrop-filter"
+        ]
+      }
+    ]
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_ff <= 115",
+    "not firefox <= 115"
+  ]
 }

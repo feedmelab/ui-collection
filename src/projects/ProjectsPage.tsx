@@ -4,6 +4,8 @@ import './index.css';
 
 interface Project {
   id: string;
+  name: string;
+  description: string;
   visible: boolean;
 }
 
@@ -50,7 +52,14 @@ function ProjectsPage() {
                 className={`card ${project.visible ? 'visible' : ''}`}
                 key={project.id}
               >
-                <span>{JSON.stringify(project, null)}</span>
+                <span>
+                  <em>Project:</em>
+                  {project.name}
+                </span>
+                <span>
+                  <em>Description:</em>
+                  {project.description}
+                </span>
               </div>
             );
           })}

@@ -8,8 +8,8 @@ export const MOCK_PROJECTS = [
       'SPA CONECTED TO A APPLE API THAT SHOWS A HUGE LIST OF FREE PODCAST AVALIABLE, TSTACK:REACT, JAVASCRIPT, FECTH, PROMISES, ASYNC/AWAIT, STYLED COMPONENTS...',
     imageUrl: '/assets/placeimg_500_300_arch4.jpg',
     contractTypeId: 3,
-    contractSignedOn: '2013-08-04T22:39:41.473Z',
-    budget: 54637,
+    contractSignedOn: '2023-07-04T18:39:41.473Z',
+    budget: '****',
     isActive: false,
   }),
   new Project({
