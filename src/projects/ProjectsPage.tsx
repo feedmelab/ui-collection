@@ -46,7 +46,7 @@ function ProjectsPage() {
     <>
       {console.log(visibleProjects.length)}
       <div className='contener'>
-        <h1>Projects</h1>
+        <h1>Last Projects</h1>
         <div className='card-wrapper'>
           {visibleProjects.map((project) => {
             return (
