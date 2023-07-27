@@ -2,7 +2,7 @@
   left: -10px;
   min-height: 130px;
   border-radius: 2rem !important;
-  padding: 2rem;
+  /* padding: 2rem; */
 
   /* From https://css.glass */
   /* background: rgba(255, 255, 255, 0.22); */
@@ -51,17 +51,62 @@ h1 {
   padding: 0.8rem;
 }
 .card-wrapper {
+  display: flex;
   margin-left: 3rem;
   margin-right: 3rem;
-  overflow: scroll;
-  height: auto;
+  height: 100%;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   flex-direction: row;
-  padding: 2rem 12rem 2rem;
+  padding-bottom: 10rem !important;
   justify-content: center;
   gap: 2rem;
   z-index: 20;
   align-items: center;
+}
+
+.base-card {
+  display: flex;
+  width: 100%;
+  min-height: 8rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1.6rem;
+  padding-top: 1rem !important;
+  background-color: rgb(220, 240, 213);
+}
+.base-card h2 {
+  font-size: 1rem;
+}
+.text-wrapper {
+  display: flex !important;
+  justify-content: flex-start !important;
+  flex-direction: column;
+  padding: 1.6rem;
+}
+span {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.3rem;
+}
+span p {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+span em {
+  margin-right: 0.3rem;
+  font-weight: bold;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
 }

@@ -48,19 +48,26 @@ function ProjectsPage() {
         <div className='card-wrapper'>
           {visibleProjects.map((project) => {
             return (
-              <div
-                className={`card ${project.visible ? 'visible' : ''}`}
-                key={project.id}
-              >
-                <span>
-                  <em>Project:</em>
-                  {project.name}
-                </span>
-                <span>
-                  <em>Description:</em>
-                  {project.description}
-                </span>
-              </div>
+              <>
+                <div
+                  className={`card ${project.visible ? 'visible' : ''}`}
+                  key={project.id}
+                >
+                  <div className='text-wrapper glass'>
+                    <span>
+                      <em>Project: </em>
+                      {project.name}
+                    </span>
+                    <span>
+                      <em>Description: </em>
+                      <p>{project.description}</p>
+                    </span>
+                  </div>
+                  <div className='base-card'>
+                    <h2>STACK:</h2>
+                  </div>
+                </div>
+              </>
             );
           })}
         </div>
