@@ -6,6 +6,8 @@ interface Project {
   id: string;
   name: string;
   description: string;
+  stack?: string;
+  url?: string;
   visible: boolean;
 }
 
@@ -64,7 +66,7 @@ function ProjectsPage() {
                     </span>
                   </div>
                   <div className='base-card'>
-                    <h2>STACK:</h2>
+                    <h2>{project.stack}</h2>
                   </div>
                 </div>
               </>
