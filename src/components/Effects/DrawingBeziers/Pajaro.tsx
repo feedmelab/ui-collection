@@ -31,7 +31,7 @@ const Pajaro: React.FC<PajaroProps> = ({ position }) => {
         backgroundImage: `url(${image})`,
         backgroundSize: 'cover',
         transition: '0.5s',
-        zIndex: 6,
+        zIndex: Math.round(Math.random() * 5) + 6,
       }}
     />
   );

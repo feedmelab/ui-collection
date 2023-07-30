@@ -1,6 +1,6 @@
 .cloud {
   position: absolute;
-  z-index: 8;
+  z-index: 7;
   /* background: transparent; */
 
   filter: blur(78px);

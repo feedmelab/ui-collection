@@ -15,17 +15,17 @@ interface Cloud {
 }
 
 const Cloud: React.FC<CloudProps> = ({
-  numClouds = Math.floor(Math.random() * 25),
+  numClouds = Math.floor(Math.random() * 5),
 }) => {
   const sketchRef = useRef<any>();
-  const seaHeight = 0;
+  const seaHeight = 200;
 
   useEffect(() => {
     const sketch = (p5: p5) => {
       let clouds: Cloud[] = [];
 
       p5.setup = () => {
-        p5.createCanvas(p5.windowWidth, p5.windowHeight - 2 * seaHeight);
+        p5.createCanvas(p5.windowWidth, p5.windowHeight - seaHeight);
         p5.noStroke();
         (p5.clear as any)();
 

@@ -19,23 +19,24 @@ type BirdFlying = {
   src: string;
   duration?: number;
   width?: number;
+  blink?: boolean;
 };
 
 const Bird: React.FC = () => {
   const randomPlaneWidth = Math.round(Math.random() * 40);
-  const randomYStart = Math.random() * 700;
+  const randomYStart = +100 + Math.random() * (window.innerHeight - 200);
   const birdArray: BirdFlying[] = [
     { src: bird, duration: 22000 },
     { src: falcon, duration: 22000, width: 40 },
-    { src: globus, duration: 62000, width: 120 },
-    { src: avio3, duration: 39000, width: randomPlaneWidth },
+    { src: globus, duration: 62000, width: 120, blink: true },
+    { src: avio3, duration: 39000, width: randomPlaneWidth, blink: true },
     { src: smallhawk, duration: 50000, width: 40 },
     { src: paloma, duration: 100000 },
     { src: oca, duration: 200000 },
     { src: oques, duration: 300000, width: 30 },
     { src: hawk, duration: 200000 },
     { src: eagle, duration: 200000 },
-    { src: avio2, duration: 400000, width: 30 },
+    { src: avio2, duration: 400000, width: 30, blink: true },
     { src: canari, duration: 532000, width: 25 },
 
     { src: golondrines, duration: 270000 },
@@ -68,12 +69,18 @@ const Bird: React.FC = () => {
         transform: x.to(
           (xVal) =>
             `translate3d(${xVal * 100}vw, ${
-              randomYStart + 10 * Math.sin((xVal * 100) / 10)
+              randomYStart + 100 * Math.sin(xVal / 10)
             }px, 0)`
         ),
       }}
     >
       <img src={randomBird.src} alt='' />
+      {randomBird.blink ? (
+        <div
+          className='blinking-light'
+          style={{ position: 'relative', top: '-5px', left: '50%' }}
+        ></div>
+      ) : null}
     </animated.div>
   );
 };

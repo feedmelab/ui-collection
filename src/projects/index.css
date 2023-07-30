@@ -1,4 +1,45 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 200ms ease-in;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fadeInUp {
+  animation: fadeInUp 300ms ease-in-out forwards;
+}
+@keyframes fadeInOutUp {
+  0% {
+    transform: translateY(110%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-128%);
+    opacity: 0;
+  }
+}
 .card {
+  position: absolute;
   left: -10px;
   min-height: 130px;
   border-radius: 0.4rem !important;
@@ -27,8 +68,8 @@
   transform: scale(1); /* Scale card to original size when visible */
 }
 .contener {
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  z-index: 14;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -66,22 +107,70 @@
   padding-bottom: 10rem !important;
   justify-content: center;
   gap: 2rem;
-  z-index: 20;
+
   align-items: center;
 }
 
 .base-card {
   display: flex;
-  width: 100%;
+  width: auto;
+  z-index: 14;
   min-height: 8rem;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 1.6rem;
+  padding: 1rem;
+
   padding-top: 1rem !important;
   background-color: rgb(220, 240, 213);
 }
 .base-card h2 {
-  font-size: 1rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: bold;
+}
+/* .base-card a {
+  display: inline-block;
+  background: none;
+  text-decoration: none;
+  pointer-events: all;
+} */
+.base-card a {
+  display: inline-block;
+  height: 1rem;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  overflow: hidden !important;
+  border-radius: 0.3rem !important;
+  text-decoration: none !important;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.525) !important;
+  border: 1px solid #240b6325;
+}
+.base-card a span {
+  display: flex;
+  justify-content: center;
+  font-size: 0.6rem;
+  opacity: 0;
+  color: #191919;
+  pointer-events: none;
+}
+.base-card a:hover {
+  background-color: rgba(225, 222, 233, 0.679) !important;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.175) !important;
+}
+.base-card a:hover span {
+  color: #1c1b1b;
+  animation: fadeInOutUp 700ms ease-in-out infinite;
+}
+
+.base-card p {
+  width: auto;
+  padding-right: 1rem;
+  font-size: 0.8rem;
+  font-style: italic;
 }
 .text-wrapper {
   display: flex !important;

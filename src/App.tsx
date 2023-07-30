@@ -73,7 +73,7 @@ const App: React.FC = () => {
       <div className='wrapper-app' style={{ backgroundColor, height: '100vh' }}>
         <Cloud />
         <Header />
-        <DrawingCanvas />
+        <DrawingCanvas /> <Bird />
         <Star />
         <Sun />
         <Moon />
@@ -86,7 +86,6 @@ const App: React.FC = () => {
             </Routes>
           </main>
         </div>{' '}
-        <Bird />
         <Fish />
         <Pajaros />
         <DrawingBeziers />

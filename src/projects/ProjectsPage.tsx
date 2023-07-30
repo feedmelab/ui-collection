@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MOCK_PROJECTS } from './MockProjects';
 import './index.css';
+import Button from '../components/UI/Button/Button';
 
 interface Project {
   id: string;
@@ -8,13 +9,17 @@ interface Project {
   description: string;
   stack?: string;
   url?: string;
+  imageUrl?: string;
   visible: boolean;
+  behaviour?: boolean;
 }
 
 function ProjectsPage() {
   const [visibleProjects, setVisibleProjects] = useState<Project[]>(
     MOCK_PROJECTS.map((project) => ({
       ...project,
+      key: project.id,
+      behaviour: project.behaviour,
       id: project.id ? project.id.toString() : '',
       visible: false,
     }))
@@ -50,11 +55,8 @@ function ProjectsPage() {
         <div className='card-wrapper'>
           {visibleProjects.map((project) => {
             return (
-              <>
-                <div
-                  className={`card ${project.visible ? 'visible' : ''}`}
-                  key={project.id}
-                >
+              <div key={project.id}>
+                <div className={`card ${project.visible ? 'visible' : ''}`}>
                   <div className='text-wrapper glass'>
                     <span>
                       <em>Project: </em>
@@ -65,11 +67,25 @@ function ProjectsPage() {
                       <p>{project.description}</p>
                     </span>
                   </div>
-                  <div className='base-card'>
-                    <h2>{project.stack}</h2>
+                  <div
+                    className='base-card'
+                    style={{
+                      backgroundImage: project.imageUrl,
+                    }}
+                  >
+                    <Button
+                      url={project.url}
+                      id='project.id'
+                      text={project.url}
+                      behaviour={project.behaviour}
+                    />
+
+                    <h2>Tecnologies: </h2>
+                    <p>{project.stack}</p>
+                    <h2>Url: </h2>
                   </div>
                 </div>
-              </>
+              </div>
             );
           })}
         </div>
