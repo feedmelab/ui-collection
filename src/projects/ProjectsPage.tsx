@@ -73,16 +73,15 @@ function ProjectsPage() {
                       backgroundImage: project.imageUrl,
                     }}
                   >
+                    <h2>Tecnologies: </h2>
+                    <p>{project.stack}</p>
+                    <h2>Url: </h2>
                     <Button
                       url={project.url}
                       id='project.id'
                       text={project.url}
                       behaviour={project.behaviour}
                     />
-
-                    <h2>Tecnologies: </h2>
-                    <p>{project.stack}</p>
-                    <h2>Url: </h2>
                   </div>
                 </div>
               </div>

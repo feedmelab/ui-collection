@@ -22,10 +22,10 @@ const Button = ({
       <Link
         to={url}
         onClick={onClick || handleClick}
-        className='fadeIn'
+        className={behaviour ? 'fadeIn std' : 'fadeIn'}
         target={behaviour ? '_blank' : '_self'}
       >
-        <span className='fadeInUp'>{text}</span>
+        <span className={behaviour ? 'fadeIn std' : 'fadeInUp'}>{text}</span>
       </Link>
     </div>
   );

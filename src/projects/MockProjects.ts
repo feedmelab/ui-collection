@@ -30,8 +30,23 @@ export const MOCK_PROJECTS = [
     budget: 91638,
     isActive: true,
   }),
+
   new Project({
     id: 3,
+    name: 'Testing',
+    description:
+      'PWA multiplayer game that allows players to compete against each others while learning how to spell a better Catalan',
+    stack: 'TSTACK: Node, Express, Socket.io, API REST, React, Typescript, CSS',
+    imageUrl: '/assets/placeimg_500_300_arch5.jpg',
+    url: 'https://jocs.feedmelab.com',
+    behaviour: true,
+    contractTypeId: 4,
+    contractSignedOn: '2013-05-26T01:10:42.344Z',
+    budget: 45660,
+    isActive: true,
+  }),
+  new Project({
+    id: 4,
     name: 'AIKREATE SAAS',
     description:
       'SaaS application that audits school day by day students learning, control the evolution of the students knowledge grade during the course. Schedule agenda for mutiusers, with alumn and tutor correlation.',
@@ -44,27 +59,14 @@ export const MOCK_PROJECTS = [
     isActive: true,
   }),
   new Project({
-    id: 4,
-    name: 'Testing',
-    description:
-      'Innovative 6th generation model. Perferendis libero qui iusto et ullam cum sint molestias vel.',
-    stack: 'TSTACK: React, Typescript, CSS, WEBPACK, Perlin Noise.',
-    imageUrl: '/assets/placeimg_500_300_arch5.jpg',
-    url: 'https://jocs.feedmelab.com',
-    behaviour: true,
-    contractTypeId: 4,
-    contractSignedOn: '2013-05-26T01:10:42.344Z',
-    budget: 45660,
-    isActive: true,
-  }),
-  new Project({
     id: 5,
     name: 'Testing',
     description:
-      'Managed logistical migration. Qui quod praesentium accusamus eos hic non error modi et.',
-    stack: '',
+      'VSCode Extension that helps you code your projects using your voice with AI GPT',
+    stack:
+      'Developed a JSON pseudo code that interacts with Chat GPT and your voice orders',
     imageUrl: '/assets/placeimg_500_300_arch12.jpg',
-    url: '',
+    url: 'Currently in development, not available yet',
     contractTypeId: 2,
     contractSignedOn: '2009-12-18T21:46:47.944Z',
     budget: 81188,
