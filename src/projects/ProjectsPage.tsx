@@ -75,13 +75,18 @@ function ProjectsPage() {
                   >
                     <h2>Tecnologies: </h2>
                     <p>{project.stack}</p>
-                    <h2>Url: </h2>
-                    <Button
+                    <div className='url-section'>
+                      <h2>Url: </h2>
+                      <a href={project.url} className='std' target='_blank'>
+                        <span>{project.url}</span>
+                      </a>
+                    </div>
+                    {/* <Button
                       url={project.url}
                       id='project.id'
                       text={project.url}
                       behaviour={project.behaviour}
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>

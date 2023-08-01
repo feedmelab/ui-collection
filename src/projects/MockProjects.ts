@@ -5,9 +5,8 @@ export const MOCK_PROJECTS = [
     id: 1,
     name: 'Podcaster',
     description:
-      'SPA CONECTED TO A APPLE API THAT SHOWS A HUGE LIST OF FREE PODCAST AVALIABLE.',
-    stack:
-      'TSTACK:REACT, JAVASCRIPT, FECTH, PROMISES, ASYNC/AWAIT, STYLED COMPONENTS...',
+      'Single Page Application connected to APPLE API tat offers a huge list of audio PODCAST available to listen and download for free from arround the world.',
+    stack: 'REACT, JAVASCRIPT, HOOKS, REDUX TOOLKIT, STYLED COMPONENTS...',
     imageUrl: '/assets/placeimg_500_300_arch4.jpg',
     url: 'https://podcaster-omega.vercel.app',
     behaviour: true,
@@ -33,10 +32,10 @@ export const MOCK_PROJECTS = [
 
   new Project({
     id: 3,
-    name: 'Testing',
+    name: "ENCREUA'T",
     description:
       'PWA multiplayer game that allows players to compete against each others while learning how to spell a better Catalan',
-    stack: 'TSTACK: Node, Express, Socket.io, API REST, React, Typescript, CSS',
+    stack: 'Node, Express, Socket.io, API REST, React, Typescript, CSS',
     imageUrl: '/assets/placeimg_500_300_arch5.jpg',
     url: 'https://jocs.feedmelab.com',
     behaviour: true,
@@ -52,7 +51,7 @@ export const MOCK_PROJECTS = [
       'SaaS application that audits school day by day students learning, control the evolution of the students knowledge grade during the course. Schedule agenda for mutiusers, with alumn and tutor correlation.',
     stack: 'NODE, TYPESCRIPT, REST API, VAGRANT, DOCKER.',
     imageUrl: '/assets/placeimg_500_300_arch12.jpg',
-    url: '',
+    url: 'Not Available',
     contractTypeId: 6,
     contractSignedOn: '2022-06-26T18:24:01.706Z',
     budget: 29729,
@@ -60,29 +59,16 @@ export const MOCK_PROJECTS = [
   }),
   new Project({
     id: 5,
-    name: 'Testing',
+    name: 'IMPERATIVELY',
     description:
       'VSCode Extension that helps you code your projects using your voice with AI GPT',
     stack:
       'Developed a JSON pseudo code that interacts with Chat GPT and your voice orders',
     imageUrl: '/assets/placeimg_500_300_arch12.jpg',
-    url: 'Currently in development, not available yet',
+    url: 'Currently in development',
     contractTypeId: 2,
     contractSignedOn: '2009-12-18T21:46:47.944Z',
     budget: 81188,
     isActive: true,
-  }),
-  new Project({
-    id: 6,
-    name: 'LTesting',
-    description:
-      'Profound mobile project. Rem consequatur laborum explicabo sint odit et illo voluptas expedita.',
-    stack: '',
-    imageUrl: '/assets/placeimg_500_300_arch1.jpg',
-    url: '',
-    contractTypeId: 3,
-    contractSignedOn: '2016-09-23T21:27:25.035Z',
-    budget: 53407,
-    isActive: false,
   }),
 ];
